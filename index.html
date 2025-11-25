@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Netflix Clone</title>
-  <link rel="stylesheet" href="style.css">
+  <link href="style.css" rel="stylesheet"></head>
+  
 </head>
 <body>
 
   <!-- Navbar -->
   <header>
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
       <div class="nav-left">
         <img
           src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
@@ -19,12 +20,7 @@
         />
       </div>
       <div class="nav-right">
-      <button class="primary__button1">
-
-              Login 
-              
-            </button>
-        
+        <button class="primary__button1">Login</button>
       </div>
     </nav>
   </header>
@@ -42,80 +38,91 @@
       <div class="hero__bg__overlay"></div>
       <div class="hero-text">
         <h1 class="hero__title">
-            Unlimited Movies TV,<br>
-            Shows and More.
-          </h1>
-          <button class="primary__button">
-              Get Started 
-              
-            </button>
-        
-          <button class=" btn-secondary">More Info</button>
-        </div>
+          Unlimited Movies TV,<br>
+          Shows and More.
+        </h1>
+        <button class="primary__button">Get Started</button>
+        <button class="btn-secondary">More Info</button>
       </div>
     </section>
 
     <!-- Movie Row -->
     <section class="row">
-      <h2>Populars on Netflix</h2>
+      <h2>Popular on Netflix</h2>
       <div class="row-posters">
         <img src="https://m.media-amazon.com/images/I/71niXI3lxlL._AC_SY679_.jpg" alt="Movie 1">
         <img src="https://m.media-amazon.com/images/I/81-349iYbfL._AC_SY679_.jpg" alt="Movie 2">
         <img src="https://m.media-amazon.com/images/I/91zL3-ScLZL._AC_SY679_.jpg" alt="Movie 3">
         <img src="https://m.media-amazon.com/images/I/81NnXK9WQPL._AC_SY679_.jpg" alt="Movie 4">
         <img src="https://m.media-amazon.com/images/I/71c05lTE03L._AC_SY679_.jpg" alt="Movie 5">
-        <img src="https://m.media-amazon.com/images/I/71c05lTE03L._AC_SY679_.jpg" alt="Movie 6 ">
+        <img src="https://m.media-amazon.com/images/I/71c05lTE03L._AC_SY679_.jpg" alt="Movie 6">
         <img src="https://m.media-amazon.com/images/I/71c05lTE03L._AC_SY679_.jpg" alt="Movie 7">
         <img src="https://m.media-amazon.com/images/I/71c05lTE03L._AC_SY679_.jpg" alt="Movie 8">
         <img src="https://m.media-amazon.com/images/I/71c05lTE03L._AC_SY679_.jpg" alt="Movie 9">
         <img src="https://m.media-amazon.com/images/I/71c05lTE03L._AC_SY679_.jpg" alt="Movie 10">
       </div>
+    </section>
 
-
-
+    <!-- Feature Section -->
     <div class="feature">
-          <div class="feature__details">
-            <h3 class="feature__title">Enjoy on your TV.</h3>
-            <h4 class="feature__sub__title">
-              Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV,
-              Blu-ray players and more.
-            </h4>
-          </div>
-          <div class="feature__image__container">
-            <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="Feature image" class="feature__image">
-            <div class="feature__backgroud__video__container">
-              <video autoplay="" loop="" muted="" class="feature__backgroud__video">
-                <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v" type="video/mp4">
-              </video>
-
-         </div>
-            </div>
-            </div>
-          </div>
+      <div class="feature__details">
+        <h3 class="feature__title">Enjoy on your TV.</h3>
+        <h4 class="feature__sub__title">
+          Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV,
+          Blu-ray players and more.
+        </h4>
+      </div>
+      <div class="feature__image__container">
+        <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="Feature image" class="feature__image">
+        <div class="feature__backgroud__video__container">
+          <video autoplay loop muted class="feature__backgroud__video">
+            <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v" type="video/mp4">
+          </video>
         </div>
+      </div>
+    </div>
 
-     <div class="FAQ__get__started__email">
-          <h3>
-            Ready to watch? Enter your email to create or restart your
-            membership.
-          </h3>
-          <div class="email__form__container">
-            <div class="form__container">
-              <input type="email" class="email__input" placeholder=" " />
-              <label class="email__label">Email Address</label>
-            </div>
-            <button class="primary__button">
-              Get Started <i class="fal fa-chevron-right"></i>
-            </button>
-          </div>
+    <!-- Email Section -->
+    <div class="FAQ__get__started__email">
+      <h3>
+        Ready to watch? Enter your email to create or restart your membership.
+      </h3>
+      <div class="email__form__container">
+        <div class="form__container">
+          <input type="email" class="email__input" placeholder=" " />
+          <label class="email__label">Email Address</label>
         </div>
-
+        <button class="primary__button">Get Started</button>
+      </div>
+    </div>
   </main>
 
   <!-- Footer -->
   <footer>
     <p>© 2025 Apurav Netflix Clone | All Rights Reserved</p>
   </footer>
+
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Movie poster click effect
+    document.querySelectorAll('.row-posters img').forEach(img => {
+      img.addEventListener('click', function() {
+        this.style.transform = 'scale(1.15) translateY(-15px)';
+        setTimeout(() => {
+          this.style.transform = '';
+        }, 300);
+      });
+    });
+  </script>
 
 </body>
 </html>
